@@ -37,12 +37,12 @@ def draw_text_on_circle(text, radius, start_angle):
     pen.penup()
     
     for i, char in enumerate(text):
-        angle = start_angle + i * angle_gap
+        angle = start_angle - i * angle_gap
         x = radius * math.cos(math.radians(angle))
         y = radius * math.sin(math.radians(angle))
         
         pen.goto(x, y)
-        pen.setheading(angle + 90)
+        pen.setheading(angle - 90)
         pen.pendown()
         pen.write(char, align="center", font=("Arial", 18, "normal"))
         pen.penup()
